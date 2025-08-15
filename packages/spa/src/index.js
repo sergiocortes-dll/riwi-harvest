@@ -1,0 +1,1 @@
+router.addRoute('/', Home);
