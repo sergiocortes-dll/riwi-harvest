@@ -1,0 +1,15 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "Una aplicación de ejemplo que usa react-core y react-router",
+  "main": "src/index.js",
+  "dependencies": {
+    "@harvest/core": "workspace:*",
+    "@harvest/router": "workspace:*",
+    "vite": "^7.1.2"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  }
+}

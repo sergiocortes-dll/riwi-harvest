@@ -1,0 +1,14 @@
+{
+  "name": "@harvest/core",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Una versión ligera de React.js",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./hooks": "./src/hooks.js"
+  },
+  "files": [
+    "src"
+  ]
+}

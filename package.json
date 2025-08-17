@@ -1,0 +1,12 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "license": "ISC",
+  "dependencies": {
+    "@harvest/core": "workspace:^",
+    "@harvest/router": "workspace:^"
+  },
+  "packageManager": "pnpm@10.14.0"
+}

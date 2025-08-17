@@ -1,0 +1,10 @@
+{
+  "name": "@harvest/router",
+  "version": "1.0.0",
+  "description": "Una versión ligera de React Router",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "echo 'react-router development'",
+    "build": "echo 'react-router build'"
+  }
+}
