@@ -20,7 +20,7 @@ const NotFoundPage = () => {
   );
 };
 
-const HarvestRouter = () => {
+
   const routes = [
     {
       path: "/", // Esta ruta actúa como layout para todas las rutas que empiecen con "/"
@@ -47,6 +47,8 @@ const HarvestRouter = () => {
       ],
     },
   ];
+
+const HarvestRouter = () => {
   return <Router routes={routes} />;
 };
 

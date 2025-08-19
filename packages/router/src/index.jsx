@@ -110,9 +110,17 @@ export const useOutlet = () => {
   return content;
 };
 
+let mensaje = "HOLA DESDE ANTES";
+
+export const updateOutlet = () => {
+  console.log('Outlet actualizadoooo')
+  mensaje = "HOLA DSDE EL OUTLET"
+}
+
 // --- Componente Outlet - VERSIÓN LIMPIA ---
 export const Outlet = () => {
   const content = useOutlet();
+
 
   console.log(
     "🔌 Outlet rendering with content:",
@@ -121,37 +129,56 @@ export const Outlet = () => {
     currentOutletContent
   );
 
-  // Usar el contenido global si el local no está actualizado
-  const actualContent = content || currentOutletContent;
+  function loadContent() {
+    console.log(currentOutletContent)
+    // Usar el contenido global si el local no está actualizado
+    const actualContent = content || currentOutletContent;
 
-  // Si no hay contenido, mostrar placeholder
-  if (!actualContent) {
-    console.log("⚠️ Outlet: No content available");
-    return createElement("div", null, "No content");
-  }
+    console.log(actualContent)
 
-  // Si el contenido es un elemento JSX/objeto con type y props
-  if (
-    actualContent &&
-    typeof actualContent === "object" &&
-    actualContent.type
-  ) {
-    console.log(
-      "✅ Outlet: Rendering JSX element with type:",
+    // Si no hay contenido, mostrar placeholder
+    if (!actualContent) {
+      console.log("⚠️ Outlet: No content available");
+      setTimeout(() => {
+        loadContent();
+      }, 1000)
+      return createElement("div", null, "No content");
+    }
+
+    const outlet = document.getElementById('hola');
+
+    // Si el contenido es un elemento JSX/objeto con type y props
+    if (
+      actualContent &&
+      typeof actualContent === "object" &&
       actualContent.type
-    );
-    return createElement(actualContent.type, actualContent.props || {});
+    ) {
+      console.log(
+        "✅ Outlet: Rendering JSX element with type:",
+        actualContent.type
+      );
+      outlet.innerHTML = actualContent;
+      return createElement(actualContent.type, actualContent.props || {});
+    }
+
+    // Si es un elemento DOM ya creado
+    if (actualContent && actualContent instanceof HTMLElement) {
+      console.log("✅ Outlet: Rendering DOM element");
+      outlet.append(actualContent);
+      return actualContent;
+    }
+
+    // Si es cualquier otra cosa, intentar renderizarla como texto
+    console.log("⚠️ Outlet: Rendering as text/fallback");
+    return createElement("div", null, String(actualContent));
   }
 
-  // Si es un elemento DOM ya creado
-  if (actualContent && actualContent instanceof HTMLElement) {
-    console.log("✅ Outlet: Rendering DOM element");
-    return actualContent;
+  if (!content) {
+    loadContent();
   }
 
-  // Si es cualquier otra cosa, intentar renderizarla como texto
-  console.log("⚠️ Outlet: Rendering as text/fallback");
-  return createElement("div", null, String(actualContent));
+  return <div id="hola">Hola mundo</div>;
+
 };
 
 // --- Lógica de enrutamiento - MEJORADA ---
@@ -271,7 +298,7 @@ export const Router = ({ routes }) => {
       console.log("🔄 Routes prop changed, updating internal routes");
       setInternalRoutes(routes);
     }
-  }, []);
+  }, [routes]);
 
   // useEffect para resolver rutas - solo depende de path e internalRoutes
   useEffect(() => {

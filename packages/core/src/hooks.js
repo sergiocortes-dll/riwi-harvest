@@ -147,6 +147,8 @@ export const useEffect = (effect, deps) => {
     shouldRunEffect = !areDepsEqual(prevEffect.deps, deps);
   }
 
+  console.log(deps, shouldRunEffect);
+
   // Limpiar efecto anterior si es necesario
   if (prevEffect && prevEffect.cleanup && shouldRunEffect) {
     try {

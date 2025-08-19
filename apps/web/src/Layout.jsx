@@ -1,4 +1,4 @@
-import { Link, Outlet } from "@harvest/router";
+import { Link, Outlet, updateOutlet } from "@harvest/router";
 
 const MainLayout = () => {
   console.log("🎨 MainLayout rendering with Outlet pattern");
@@ -14,6 +14,7 @@ const MainLayout = () => {
           marginBottom: "1rem",
         }}
       >
+        <button onClick={updateOutlet}>Ejecutar algo</button>
         <nav>
           <Link to="/" style={{ marginRight: "1rem" }}>
             Home
