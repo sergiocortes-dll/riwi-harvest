@@ -10,6 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@harvest/core": path.resolve(__dirname, "../../packages/core/src"),
+      "@harvest/router": path.resolve(__dirname, "../../packages/router/src"),
     },
   },
   define: {
