@@ -20,34 +20,33 @@ const NotFoundPage = () => {
   );
 };
 
-const routes = [
-  {
-    path: "/", // Esta ruta actúa como layout para todas las rutas que empiecen con "/"
-    element: <MainLayout />, // Layout principal que envuelve todo
-    children: [
-      {
-        path: "/",
-        exact: true,
-        element: <HomePage />,
-      },
-      {
-        path: "/about",
-        exact: true,
-        element: <AboutPage />,
-      },
-      {
-        path: "/test",
-        element: <div>hola</div>,
-      },
-      {
-        path: "*",
-        element: <NotFoundPage />,
-      },
-    ],
-  },
-];
-
 const HarvestRouter = () => {
+  const routes = [
+    {
+      path: "/", // Esta ruta actúa como layout para todas las rutas que empiecen con "/"
+      element: <MainLayout />, // Layout principal que envuelve todo
+      children: [
+        {
+          path: "/",
+          exact: true,
+          element: <HomePage />,
+        },
+        {
+          path: "/about",
+          exact: true,
+          element: <AboutPage />,
+        },
+        {
+          path: "/test",
+          element: <div>hola</div>,
+        },
+        {
+          path: "*",
+          element: <NotFoundPage />,
+        },
+      ],
+    },
+  ];
   return <Router routes={routes} />;
 };
 
