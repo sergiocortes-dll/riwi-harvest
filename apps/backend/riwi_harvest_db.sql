@@ -37,6 +37,8 @@ CREATE TABLE `clan` (
 	`id_clan` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`name` VARCHAR(50) NOT NULL,
 	`status` BOOLEAN NOT NULL DEFAULT 1,
+	`branch` ENUM() NOT NULL,
+	`shift` ENUM('AM', 'PM') NOT NULL,
 	PRIMARY KEY(`id_clan`)
 );
 
