@@ -1,5 +1,5 @@
 {
-  "name": "@harvest/router",
+  "name": "gi",
   "version": "1.0.0",
   "description": "Una versión ligera de React Router",
   "main": "src/index.js",
