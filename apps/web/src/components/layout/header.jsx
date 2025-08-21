@@ -27,10 +27,14 @@ export default function Header() {
   const handleSelect = (e) => {
     locationState.set(e);
 
-    // Actualizar el display directamente
+    // Encontrar el label correspondiente al value
+    const selectedOption = locations.find((loc) => loc.value === e);
+    const labelToShow = selectedOption ? selectedOption.label : e;
+
+    // Actualizar el display directamente con el label
     const displays = document.querySelectorAll("[data-current-location]");
     displays.forEach((display) => {
-      display.textContent = e;
+      display.textContent = labelToShow;
     });
   };
 
@@ -46,17 +50,31 @@ export default function Header() {
           className="h-8"
         />
       </div>
-      <div className="flex-1">
+      <div className="flex gap-2 flex-1">
+        <div className="flex items-center gap-2 px-3 py-2 border border-divider rounded-lg bg-white text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+          <span data-current-location>
+            {locations.find((loc) => loc.value === locationState.value)
+              ?.label || locationState.value}
+          </span>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
         <Select
-          value={locationState.value}
+          value={
+            locations.find((loc) => loc.value === locationState.value)?.label ||
+            locationState.value
+          }
           onChange={handleSelect}
           options={locations}
+          observableState={locationState}
           icon={<i class="fa-solid fa-caret-down"></i>}
         />
         <Link to="/test">Test</Link>
         <Link to="/hola">Hola</Link>
       </div>
-      <span data-current-location>{locationState.value}</span>
+      <span data-current-location>
+        {locations.find((loc) => loc.value === locationState.value)?.label ||
+          locationState.value}
+      </span>
     </header>
   );
 }
