@@ -1,14 +1,8 @@
-// index.js - Core completamente simplificado
-import {
-  endComponent,
-  resetGlobalState,
-  setReRenderFunction,
-  startComponent,
-} from "./hooks.js";
+import { endComponent, setReRenderFunction, startComponent } from "./hooks.js";
 
 let appRootElement;
 let rootComponent;
-let isRendering = false;
+let componentInstanceCounters = new Map(); // Para rastrear instancias de cada tipo de componente
 
 export const Fragment = ({ children }) => {
   return Array.isArray(children) ? children : [children].filter(Boolean);
@@ -16,10 +10,29 @@ export const Fragment = ({ children }) => {
 
 export const createElement = (type, props, ...children) => {
   if (typeof type === "function") {
+    // Obtener nombre del componente
     const componentName = type.name || "AnonymousComponent";
 
-    // Iniciar el contexto del componente con un sistema simple
-    startComponent(componentName);
+    // Manejar instancias múltiples del mismo componente
+    if (!componentInstanceCounters.has(componentName)) {
+      componentInstanceCounters.set(componentName, 0);
+    }
+
+    // Buscar si hay una key explícita en props
+    const key = props?.key;
+    let instanceIndex;
+
+    if (key !== undefined) {
+      // Si hay key, usarla como identificador único
+      instanceIndex = key;
+    } else {
+      // Si no hay key, usar contador automático
+      instanceIndex = componentInstanceCounters.get(componentName);
+      componentInstanceCounters.set(componentName, instanceIndex + 1);
+    }
+
+    // Iniciar el contexto del componente
+    const componentKey = startComponent(componentName, instanceIndex);
 
     const componentProps = {
       ...(props || {}),
@@ -34,14 +47,8 @@ export const createElement = (type, props, ...children) => {
     let result;
     try {
       result = type(componentProps);
-    } catch (error) {
-      console.error(`Error rendering ${componentName}:`, error);
-      result = createElement(
-        "div",
-        { style: { color: "red" } },
-        `Error: ${error.message}`
-      );
     } finally {
+      // Siempre finalizar el contexto, incluso si hay error
       endComponent();
     }
 
@@ -52,10 +59,8 @@ export const createElement = (type, props, ...children) => {
     return children.flat();
   }
 
-  // Crear elemento DOM
   const element = document.createElement(type);
 
-  // Aplicar props
   for (const key in props || {}) {
     if (key === "children" || key === "key") continue;
 
@@ -77,7 +82,6 @@ export const createElement = (type, props, ...children) => {
     }
   }
 
-  // Renderizar children
   const renderChild = (child) => {
     if (child === null || child === undefined || child === false) {
       return null;
@@ -122,29 +126,22 @@ export const render = (component, rootElement) => {
   rootComponent = component;
 
   const reRender = () => {
-    if (!appRootElement || !rootComponent || isRendering) return;
+    if (!appRootElement || !rootComponent) return;
 
-    isRendering = true;
+    // Resetear contadores de instancias para el nuevo render
+    componentInstanceCounters.clear();
 
-    // Reset del estado global para hooks
-    resetGlobalState();
-
-    // Limpiar el DOM
+    // Limpiar contenido anterior
     while (appRootElement.firstChild) {
       appRootElement.removeChild(appRootElement.firstChild);
     }
 
-    // Renderizar inmediatamente (sin setTimeout ni requestAnimationFrame)
-    try {
-      const result = createElement(rootComponent, null);
-      if (result) {
-        appRootElement.appendChild(result);
-      }
-    } catch (error) {
-      console.error("Error in render:", error);
-      appRootElement.innerHTML = `<div style="color: red; padding: 20px;">Render Error: ${error.message}</div>`;
-    } finally {
-      isRendering = false;
+    // CRÍTICO: Usar createElement para renderizar el componente raíz
+    // Esto asegura que se inicialice el contexto del componente
+    const result = createElement(rootComponent, null);
+
+    if (result) {
+      appRootElement.appendChild(result);
     }
   };
 

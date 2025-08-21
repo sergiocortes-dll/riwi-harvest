@@ -1,9 +1,12 @@
 {
-  "name": "react",
+  "name": "harvest",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "license": "ISC",
+  "scripts": {
+    "dev:web": "pnpm --filter react-app dev"
+  },
   "dependencies": {
     "@harvest/core": "workspace:^",
     "@harvest/router": "workspace:^"

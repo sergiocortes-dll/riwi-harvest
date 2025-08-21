@@ -1,3 +1,4 @@
+import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import { defineConfig } from "vite";
 
@@ -9,11 +10,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      "@": path.resolve(__dirname, "./src"),
       "@harvest/core": path.resolve(__dirname, "../../packages/core/src"),
-      "@harvest/router": path.resolve(__dirname, "../../packages/router/src"),
     },
   },
   define: {
     global: "globalThis",
   },
+  plugins: [tailwindcss()],
 });

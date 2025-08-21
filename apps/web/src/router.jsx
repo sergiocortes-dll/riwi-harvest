@@ -1,55 +1,21 @@
+import { createElement } from "@harvest/core";
 import { Router } from "@harvest/router";
-import { HomePage } from "./Home";
-import MainLayout from "./Layout";
+import Home from "./page/Home";
+import Layout from "./page/Layout";
 
-const AboutPage = () => {
-  return (
-    <div>
-      <h1>About Page</h1>
-      <p>Esta es la página about, también usando el layout principal.</p>
-    </div>
-  );
-};
+const routes = [
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
+  },
+];
 
-const NotFoundPage = () => {
-  return (
-    <div>
-      <h1>404 - Página no encontrada</h1>
-      <p>La ruta solicitada no existe.</p>
-    </div>
-  );
-};
+const AppRouter = () => createElement(Router, { routes });
 
-
-  const routes = [
-    {
-      path: "/", // Esta ruta actúa como layout para todas las rutas que empiecen con "/"
-      element: <MainLayout />, // Layout principal que envuelve todo
-      children: [
-        {
-          path: "/",
-          exact: true,
-          element: <HomePage />,
-        },
-        {
-          path: "/about",
-          exact: true,
-          element: <AboutPage />,
-        },
-        {
-          path: "/test",
-          element: <div>hola</div>,
-        },
-        {
-          path: "*",
-          element: <NotFoundPage />,
-        },
-      ],
-    },
-  ];
-
-const HarvestRouter = () => {
-  return <Router routes={routes} />;
-};
-
-export default HarvestRouter;
+export default AppRouter;
