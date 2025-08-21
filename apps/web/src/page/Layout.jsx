@@ -1,13 +1,16 @@
+/** @jsx h */
 import Header from "@/components/layout/header";
 import { Outlet } from "@harvest/router";
 
-export default function Layout() {
+const Layout = ({ children }) => {
+  console.log("Layout renderizado, children:", children);
+
   return (
-    <div>
+    <div className="app-layout">
       <Header />
-      <div>
-        <Outlet />
-      </div>
+      <main className="main-content">{children || <Outlet />}</main>
     </div>
   );
-}
+};
+
+export default Layout;

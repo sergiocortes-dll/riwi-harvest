@@ -7,3 +7,8 @@
 
   --color-divider: #e5e7eb;
 }
+
+:root {
+  --sidebar-width: 250px;
+  --sidebar-width-collapsed: 80px;
+}
