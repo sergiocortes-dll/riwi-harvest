@@ -1,4 +1,4 @@
-CREATE DATABASE riwi_harvest_db;
+CREATE DATABASE IF NOT EXISTS riwi_harvest_db;
 USE riwi_harvest_db;
 
 CREATE TABLE `coders` (
