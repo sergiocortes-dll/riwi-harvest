@@ -5,8 +5,9 @@
   "private": true,
   "license": "ISC",
   "scripts": {
-    "build": "pnpm --filter react-app build",
-    "dev:web": "pnpm --filter react-app dev"
+    "web:build": "pnpm --filter react-app build",
+    "web:dev": "pnpm --filter react-app dev",
+    "web:start": "pnpm --filter react-app start"
   },
   "dependencies": {
     "@harvest/core": "workspace:^",

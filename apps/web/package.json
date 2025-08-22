@@ -14,6 +14,10 @@
   },
   "scripts": {
     "dev": "vite",
+    "start": "serve dist -s",
     "build": "vite build"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
   }
 }
