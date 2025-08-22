@@ -1,7 +1,6 @@
 /** @jsx h */
 import ButtonIcon from "@/components/ui/button-icon";
-import { Link } from "@harvest/router";
-import Select from "../ui/select";
+import routeNames from "@/lib/routes.json";
 
 // Objeto observable simple
 const locationState = {
@@ -17,6 +16,8 @@ const locationState = {
     this.listeners.push(listener);
   },
 };
+
+console.log(routeNames);
 
 export default function Header() {
   const locations = [
@@ -41,7 +42,7 @@ export default function Header() {
   return (
     <header className="flex p-2 items-center bg-white border-b border-b-divider">
       <div className="flex items-center w-(--sidebar-width)">
-        <ButtonIcon label="text">
+        <ButtonIcon label="Menú">
           <i class="fa-solid fa-bars"></i>
         </ButtonIcon>
         <img
@@ -51,25 +52,9 @@ export default function Header() {
         />
       </div>
       <div className="flex gap-2 flex-1">
-        <div className="flex items-center gap-2 px-3 py-2 border border-divider rounded-lg bg-white text-sm focus:outline-none focus:ring-2 focus:ring-ring">
-          <span data-current-location>
-            {locations.find((loc) => loc.value === locationState.value)
-              ?.label || locationState.value}
-          </span>
-          <i class="fa-solid fa-caret-down"></i>
-        </div>
-        <Select
-          value={
-            locations.find((loc) => loc.value === locationState.value)?.label ||
-            locationState.value
-          }
-          onChange={handleSelect}
-          options={locations}
-          observableState={locationState}
-          icon={<i class="fa-solid fa-caret-down"></i>}
-        />
-        <Link to="/test">Test</Link>
-        <Link to="/hola">Hola</Link>
+        <h2 className="text-xl font-semibold">
+          {routeNames[window.location.pathname]}
+        </h2>
       </div>
       <span data-current-location>
         {locations.find((loc) => loc.value === locationState.value)?.label ||

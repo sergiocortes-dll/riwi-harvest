@@ -5,6 +5,7 @@
   "private": true,
   "license": "ISC",
   "scripts": {
+    "build": "pnpm --filter react-app build",
     "dev:web": "pnpm --filter react-app dev"
   },
   "dependencies": {

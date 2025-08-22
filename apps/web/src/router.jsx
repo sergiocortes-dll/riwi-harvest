@@ -85,6 +85,10 @@ const routes = [
         element: () => <div>Página de inicio</div>, // ✅ JSX directo
       },
       {
+        path: "desarrollo",
+        element: () => <div>Desarrollo</div>,
+      },
+      {
         path: "hola", // Sin "/" - relativo al padre
         element: Home, // ✅ Función del componente
       },

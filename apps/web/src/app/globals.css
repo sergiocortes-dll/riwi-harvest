@@ -5,10 +5,17 @@
   --color-secondary: #6b7280;
   --color-destructive: #ef4444;
 
-  --color-divider: #e5e7eb;
+  --color-divider: #cccccc;
+
+  --radius-1: 0.625rem;
+  --radius-2: 0.375rem;
 }
 
 :root {
   --sidebar-width: 250px;
   --sidebar-width-collapsed: 80px;
+}
+
+body {
+  background: #eee;
 }

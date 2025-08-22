@@ -60,7 +60,7 @@ const ButtonIcon = ({
         {
           key: "tooltip",
           className:
-            "absolute z-10 px-2 py-1 text-xs text-white bg-gray-900 rounded-md -top-8 left-1/2 -translate-x-1/2 shadow-md whitespace-nowrap",
+            "absolute z-10 px-2 py-1 text-xs text-white bg-gray-900 rounded-md -bottom-7 left-1/2 -translate-x-1/2 shadow-md whitespace-nowrap",
         },
         label
       ),
