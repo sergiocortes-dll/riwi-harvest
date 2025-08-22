@@ -7,11 +7,15 @@
   "scripts": {
     "web:build": "pnpm --filter react-app build",
     "web:dev": "pnpm --filter react-app dev",
-    "web:start": "pnpm --filter react-app start"
+    "web:start": "pnpm --filter react-app start",
+    "api:start": "pnpm --filter api start",
+    "start": "concurrently \"pnpm web:dev\" \"pnpm api:start\""
   },
   "dependencies": {
     "@harvest/core": "workspace:^",
-    "@harvest/router": "workspace:^"
+    "@harvest/router": "workspace:^",
+    "concurrently": "^9.2.0",
+    "dotenv": "^17.2.1"
   },
   "packageManager": "pnpm@10.14.0"
 }
