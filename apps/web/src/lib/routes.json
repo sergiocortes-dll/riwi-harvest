@@ -1,4 +1,8 @@
 {
+  "/": "Dashboard",
+  "/clanes": "Clanes",
+  "/coder": "Coder",
+  "/desarrollo": "Desarrollo",
   "/hola": "Hola, mundo!",
   "/test": "Testenado rutas",
   "/sede/med": "Sede Medellín"
