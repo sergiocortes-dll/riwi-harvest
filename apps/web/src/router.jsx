@@ -2,6 +2,8 @@ import { debugStates, useState } from "@harvest/core";
 import { Router } from "@harvest/router";
 import Home from "./page/Home";
 import Layout from "./page/Layout";
+import Sede from "./page/sede/Sede";
+import SedeLayout from "./page/sede/SedeLayout";
 
 const Counter = ({ title = "Contador" }) => {
   const [count, setCount] = useState(0);
@@ -82,7 +84,7 @@ const routes = [
     children: [
       {
         path: "", // Ruta vacía para "/"
-        element: () => <div>Página de inicio</div>, // ✅ JSX directo
+        element: Home, // ✅ JSX directo
       },
       {
         path: "desarrollo",
@@ -95,6 +97,16 @@ const routes = [
       {
         path: "test", // Sin "/" - relativo al padre
         element: () => <div>Página de test</div>, // ✅ JSX directo
+      },
+      {
+        path: "sede",
+        element: SedeLayout,
+        children: [
+          {
+            path: ":sede",
+            element: <Sede />,
+          },
+        ],
       },
     ],
   },

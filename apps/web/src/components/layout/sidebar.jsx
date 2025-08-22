@@ -39,7 +39,7 @@ export default function Sidebar() {
         <h2>Sedes</h2>
         <Link
           to="/sede/med"
-          className="flex p-1 items-center gap-2 hover:bg-gray-100 rounded-1 overflow-hidden border border-divider"
+          className="flex transition-colors p-1 items-center gap-2 hover:bg-gray-100 rounded-1 overflow-hidden border border-divider"
         >
           <img
             className="w-5/12 rounded-2 aspect-video"
@@ -48,8 +48,8 @@ export default function Sidebar() {
           <span className="flex-1">Medellín</span>
         </Link>
         <Link
-          to="/sede/med"
-          className="flex p-1 items-center gap-2 hover:bg-gray-100 rounded-1 overflow-hidden border border-divider"
+          to="/sede/barr"
+          className="flex transition-colors p-1 items-center gap-2 hover:bg-gray-100 rounded-1 overflow-hidden border border-divider"
         >
           <img
             className="w-5/12 rounded-2 aspect-video"
