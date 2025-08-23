@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   console.log("Layout renderizado, children:", children);
 
   return (
-    <div className="w-full h-[100dvh] flex flex-col">
+    <div className="w-full min-h-[100dvh] flex flex-col">
       <Header />
       <div className="flex h-full">
         <Sidebar />

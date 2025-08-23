@@ -30,9 +30,9 @@ export default function Sidebar() {
         fullWidth
         icon={<i class="fa-solid fa-code"></i>}
         component={Link}
-        to="/coder"
+        to="/coders"
       >
-        Coder
+        Coders
       </Button>
       <Button
         align="left"
