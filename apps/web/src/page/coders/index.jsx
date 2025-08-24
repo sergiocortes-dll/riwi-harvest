@@ -1,3 +1,4 @@
+import SearchForm from "@/components/forms/search-form";
 import { ChartComponent } from "@/components/ui/chart";
 
 const sections = [
@@ -56,66 +57,74 @@ const sections = [
 
 export default function Coders() {
   return (
-    <div className="space-y-20 p-10">
-      {sections.map((section, i) => (
-        <div key={i} className="space-y-6">
-          <h2 className="text-xl font-bold uppercase">{section.title}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {section.charts.map((chart, j) => (
-              <div
-                className="min-h-[50dvh] bg-white p-5 border border-divider rounded-1"
-                key={j}
-              >
-                <ChartComponent
-                  type={chart.type}
-                  className="max-w-md"
-                  data={{
-                    labels: chart.labels,
-                    datasets: [
-                      {
-                        label: chart.title,
-                        data: chart.data,
-                        backgroundColor:
-                          chart.type === "pie"
-                            ? ["#5acca4", "#E97132"]
-                            : "#6b5cff",
-                        borderColor: "#eee",
-                        barThickness: chart.type === "bar" ? 40 : undefined,
-                      },
-                    ],
-                  }}
-                  options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                      legend: {
-                        position: "bottom",
-                      },
-                      datalabels: {
-                        formatter: (value, context) => {
-                          if (context.chart.config.type === "pie") {
-                            return value + "%";
-                          }
+    <div>
+      <div className="sticky p-5 top-15 border-b border-divider bg-white">
+        <SearchForm
+          placeholder="Buscar coder por nombre"
+          onSearch={(q) => console.log("Buscando...", q)}
+        />
+      </div>
+      <div className="space-y-20  p-5 py-10">
+        {sections.map((section, i) => (
+          <div key={i} className="space-y-6">
+            <h2 className="text-xl font-bold uppercase">{section.title}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-[repeat(auto-fit,minmax(380px,1fr))] gap-10">
+              {section.charts.map((chart, j) => (
+                <div
+                  className="min-h-[50dvh] bg-white p-5 border border-divider rounded-1"
+                  key={j}
+                >
+                  <ChartComponent
+                    type={chart.type}
+                    className="max-w-md"
+                    data={{
+                      labels: chart.labels,
+                      datasets: [
+                        {
+                          label: chart.title,
+                          data: chart.data,
+                          backgroundColor:
+                            chart.type === "pie"
+                              ? ["#5acca4", "#E97132"]
+                              : "#6b5cff",
+                          borderColor: "#eee",
+                          barThickness: chart.type === "bar" ? 40 : undefined,
+                        },
+                      ],
+                    }}
+                    options={{
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        legend: {
+                          position: "bottom",
+                        },
+                        datalabels: {
+                          formatter: (value, context) => {
+                            if (context.chart.config.type === "pie") {
+                              return value + "%";
+                            }
+                          },
+                        },
+                        title: {
+                          display: true,
+                          text: chart.title,
+                          padding: {
+                            bottom: 30,
+                          },
+                          font: {
+                            size: 20,
+                          },
                         },
                       },
-                      title: {
-                        display: true,
-                        text: chart.title,
-                        padding: {
-                          bottom: 30,
-                        },
-                        font: {
-                          size: 20,
-                        },
-                      },
-                    },
-                  }}
-                />
-              </div>
-            ))}
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
