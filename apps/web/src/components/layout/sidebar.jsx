@@ -4,7 +4,7 @@ import Divider from "../ui/divider";
 
 export default function Sidebar() {
   return (
-    <div className="flex flex-col gap-2 w-(--sidebar-width) bg-white h-full border-r border-r-divider p-2">
+    <div className="sticky top-14 h-[calc(100dvh-(var(--spacing)*15))] inline-flex flex-col gap-2 w-(--sidebar-width) bg-white border-r border-r-divider p-2">
       <Button
         align="left"
         fullWidth
@@ -14,7 +14,25 @@ export default function Sidebar() {
         component={Link}
         to="/"
       >
-        Inicio
+        Dashboard
+      </Button>
+      <Button
+        align="left"
+        fullWidth
+        icon={<i class="fa-solid fa-users"></i>}
+        component={Link}
+        to="/clanes"
+      >
+        Clanes
+      </Button>
+      <Button
+        align="left"
+        fullWidth
+        icon={<i class="fa-solid fa-code"></i>}
+        component={Link}
+        to="/coders"
+      >
+        Coders
       </Button>
       <Button
         align="left"
@@ -28,7 +46,7 @@ export default function Sidebar() {
       <Button
         align="left"
         fullWidth
-        icon={<i class="fa-solid fa-users"></i>}
+        icon={<i class="fa-solid fa-people-group"></i>}
         component={Link}
         to="/usuarios"
       >
