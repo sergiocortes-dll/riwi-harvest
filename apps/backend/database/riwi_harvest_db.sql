@@ -6,10 +6,10 @@ CREATE TABLE `coders` (
 	`name` VARCHAR(50) NOT NULL,
 	`lastname` VARCHAR(50) NOT NULL,
 	`email` VARCHAR(100) NOT NULL UNIQUE,
-	`doc_type` ENUM('CC', 'TI', 'CE', 'PA', 'PPT', 'RC') NOT NULL,
+	`doc_type` ENUM('CC', 'TI', 'CE', 'PA', 'PPT', 'RC'),
 	`document` VARCHAR(20) NOT NULL UNIQUE,
-	`cel_number` VARCHAR(40) NOT NULL,
-	`gender` ENUM('male', 'female', 'other') NOT NULL,
+	`cel_number` VARCHAR(40),
+	`gender` ENUM('male', 'female', 'other'),
 	`id_clan` INTEGER,
 	`status` BOOLEAN NOT NULL DEFAULT 1,
 	PRIMARY KEY(`id_coder`)
