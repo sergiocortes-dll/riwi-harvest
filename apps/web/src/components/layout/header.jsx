@@ -4,7 +4,7 @@ import routeNames from "@/lib/routes.json";
 
 export default function Header() {
   return (
-    <header className="flex py-2 items-center bg-white border-b border-b-divider">
+    <header className="flex sticky top-0 z-100 py-2 items-center bg-white border-b border-b-divider h-15">
       <div className="flex items-center w-(--sidebar-width) px-4">
         <ButtonIcon label="Menú">
           <i class="fa-solid fa-bars"></i>

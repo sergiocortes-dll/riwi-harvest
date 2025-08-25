@@ -92,14 +92,29 @@ export const Link = ({
   onClick,
   replace = false,
   state = null,
+  target,
+  rel,
+  active, // opcional: para pasar "data-active"
+  ...rest // captura todos los demás props (data-*, aria-*, id, etc.)
 }) => {
   const handleClick = (e) => {
-    e.preventDefault();
-
     if (onClick) {
       onClick(e);
     }
 
+    // Si el click fue con ctrl/cmd o target="_blank", dejar que el navegador maneje
+    if (
+      e.defaultPrevented ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.shiftKey ||
+      e.altKey ||
+      target === "_blank"
+    ) {
+      return;
+    }
+
+    e.preventDefault();
     navigate(to, { replace, state });
   };
 
@@ -109,7 +124,11 @@ export const Link = ({
       href: to,
       className,
       style,
+      target,
+      rel: target === "_blank" ? rel || "noopener noreferrer" : rel,
       onClick: handleClick,
+      ...(active ? { "data-active": "true", "aria-current": "page" } : {}),
+      ...rest, // muy importante: pasa los demás props al <a>
     },
     children
   );

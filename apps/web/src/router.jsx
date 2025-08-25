@@ -1,5 +1,7 @@
 import { debugStates, useState } from "@harvest/core";
 import { Router } from "@harvest/router";
+import Clanes from "./page/clanes";
+import Coders from "./page/coders";
 import Home from "./page/Home";
 import Layout from "./page/Layout";
 import Sede from "./page/sede/Sede";
@@ -85,6 +87,18 @@ const routes = [
       {
         path: "", // Ruta vacía para "/"
         element: Home, // ✅ JSX directo
+      },
+      {
+        path: "/",
+        element: () => <div>Error 404</div>, // ✅ JSX directo
+      },
+      {
+        path: "clanes",
+        element: Clanes,
+      },
+      {
+        path: "coders",
+        element: Coders,
       },
       {
         path: "desarrollo",
