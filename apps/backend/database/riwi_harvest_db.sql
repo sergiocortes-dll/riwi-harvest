@@ -22,9 +22,17 @@ CREATE TABLE `grades` (
 	`grade` DECIMAL(5,2) CHECK(grade BETWEEN 0 AND 100),
 	`fedback` TEXT(8000),
 	`id_coder` INTEGER NOT NULL,
-	`id_module` INTEGER NOT NULL,
 	`grade_type` ENUM('Module assessment', 'Training', 'Review'),
+	`id_task` INTEGER NOT NULL,
 	PRIMARY KEY(`id_grades`)
+);
+
+CREATE TABLE `tasks` (
+	`id_task` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`id_module` INTEGER NOT NULL,
+	`task_name` VARCHAR(255) NOT NULL,
+	`task_description` TEXT(8000) NOT NULL,
+	PRIMARY KEY(`id_task`)
 );
 
 
@@ -77,23 +85,25 @@ CREATE TABLE `attendances` (
 
 ALTER TABLE `coders`
 ADD FOREIGN KEY(`id_clan`) REFERENCES `clan`(`id_clan`)
-ON UPDATE CASCADE ON DELETE SET NULL;
+ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `modules`
 ADD FOREIGN KEY(`id_course`) REFERENCES `courses`(`id_course`)
-ON UPDATE NO ACTION ON DELETE NO ACTION;
+ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `grades`
 ADD FOREIGN KEY(`id_coder`) REFERENCES `coders`(`id_coder`)
 ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE `grades`
-ADD FOREIGN KEY(`id_module`) REFERENCES `modules`(`id_module`)
-ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `attendances`
 ADD FOREIGN KEY(`id_module`) REFERENCES `modules`(`id_module`)
-ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE `attendances`
-ADD FOREIGN KEY(`id_coder`) REFERENCES `coders`(`id_coder`)
 ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `clan`
 ADD FOREIGN KEY(`id_cohort`) REFERENCES `cohorts`(`id_cohort`)
-ON UPDATE NO ACTION ON DELETE NO ACTION;
-
+ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE `grades`
+ADD FOREIGN KEY(`id_task`) REFERENCES `tasks`(`id_task`)
+ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE `attendances`
+ADD FOREIGN KEY(`id_coder`) REFERENCES `coders`(`id_coder`)
+ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE `tasks`
+ADD FOREIGN KEY(`id_module`) REFERENCES `modules`(`id_module`)
+ON UPDATE CASCADE ON DELETE CASCADE;
