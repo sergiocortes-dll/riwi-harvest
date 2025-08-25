@@ -1,0 +1,1524 @@
+<html dir="ltr" lang="es-co" xml:lang="es-co">
+  <head>
+    <title>Entrar al sitio | Riwi</title>
+    <link
+      rel="shortcut icon"
+      href="//riwi-test.unhosting.site/pluginfile.php/1/theme_academi/favicon/1755932720/favicon.png"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="moodle, Entrar al sitio | Riwi" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://riwi-test.unhosting.site/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css"
+    />
+    <script id="firstthemesheet" type="text/css">
+      /** Required in order to fix style inclusion problems in IE with YUI **/
+    </script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://riwi-test.unhosting.site/theme/styles.php/academi/1755932720_1755932853/all"
+    />
+    <script>
+      //<![CDATA[
+      var M = {};
+      M.yui = {};
+      M.pageloadstarttime = new Date();
+      M.cfg = {
+        wwwroot: "https:\/\/riwi-test.unhosting.site",
+        apibase: "https:\/\/riwi-test.unhosting.site\/api",
+        homeurl: {},
+        sesskey: "41T6S3EKcM",
+        sessiontimeout: "28800",
+        sessiontimeoutwarning: "1200",
+        themerev: "1755932720",
+        slasharguments: 1,
+        theme: "academi",
+        iconsystemmodule: "core\/icon_system_fontawesome",
+        jsrev: "1755932720",
+        admin: "admin",
+        svgicons: true,
+        usertimezone: "Am\u00e9rica\/Bogot\u00e1",
+        language: "es_co",
+        courseId: 1,
+        courseContextId: 2,
+        contextid: 1,
+        contextInstanceId: 0,
+        langrev: 1755932720,
+        templaterev: "1755932720",
+        siteId: 1,
+        userId: 0,
+      };
+      var yui1ConfigFn = function (me) {
+        if (/-skin|reset|fonts|grids|base/.test(me.name)) {
+          me.type = "css";
+          me.path = me.path.replace(/\.js/, ".css");
+          me.path = me.path.replace(
+            /\/yui2-skin/,
+            "/assets/skins/sam/yui2-skin"
+          );
+        }
+      };
+      var yui2ConfigFn = function (me) {
+        var parts = me.name.replace(/^moodle-/, "").split("-"),
+          component = parts.shift(),
+          module = parts[0],
+          min = "-min";
+        if (/-(skin|core)$/.test(me.name)) {
+          parts.pop();
+          me.type = "css";
+          min = "";
+        }
+        if (module) {
+          var filename = parts.join("-");
+          me.path =
+            component + "/" + module + "/" + filename + min + "." + me.type;
+        } else {
+          me.path = component + "/" + component + "." + me.type;
+        }
+      };
+      YUI_config = {
+        debug: false,
+        base: "https:\/\/riwi-test.unhosting.site\/lib\/yuilib\/3.18.1\/",
+        comboBase: "https:\/\/riwi-test.unhosting.site\/theme\/yui_combo.php?",
+        combine: true,
+        filter: null,
+        insertBefore: "firstthemesheet",
+        groups: {
+          yui2: {
+            base: "https:\/\/riwi-test.unhosting.site\/lib\/yuilib\/2in3\/2.9.0\/build\/",
+            comboBase:
+              "https:\/\/riwi-test.unhosting.site\/theme\/yui_combo.php?",
+            combine: true,
+            ext: false,
+            root: "2in3\/2.9.0\/build\/",
+            patterns: { "yui2-": { group: "yui2", configFn: yui1ConfigFn } },
+          },
+          moodle: {
+            name: "moodle",
+            base: "https:\/\/riwi-test.unhosting.site\/theme\/yui_combo.php?m\/1755932720\/",
+            combine: true,
+            comboBase:
+              "https:\/\/riwi-test.unhosting.site\/theme\/yui_combo.php?",
+            ext: false,
+            root: "m\/1755932720\/",
+            patterns: {
+              "moodle-": { group: "moodle", configFn: yui2ConfigFn },
+            },
+            filter: null,
+            modules: {
+              "moodle-core-notification": {
+                requires: [
+                  "moodle-core-notification-dialogue",
+                  "moodle-core-notification-alert",
+                  "moodle-core-notification-confirm",
+                  "moodle-core-notification-exception",
+                  "moodle-core-notification-ajaxexception",
+                ],
+              },
+              "moodle-core-notification-dialogue": {
+                requires: [
+                  "base",
+                  "node",
+                  "panel",
+                  "escape",
+                  "event-key",
+                  "dd-plugin",
+                  "moodle-core-widget-focusafterclose",
+                  "moodle-core-lockscroll",
+                ],
+              },
+              "moodle-core-notification-alert": {
+                requires: ["moodle-core-notification-dialogue"],
+              },
+              "moodle-core-notification-confirm": {
+                requires: ["moodle-core-notification-dialogue"],
+              },
+              "moodle-core-notification-exception": {
+                requires: ["moodle-core-notification-dialogue"],
+              },
+              "moodle-core-notification-ajaxexception": {
+                requires: ["moodle-core-notification-dialogue"],
+              },
+              "moodle-core-lockscroll": { requires: ["plugin", "base-build"] },
+              "moodle-core-chooserdialogue": {
+                requires: ["base", "panel", "moodle-core-notification"],
+              },
+              "moodle-core-blocks": {
+                requires: [
+                  "base",
+                  "node",
+                  "io",
+                  "dom",
+                  "dd",
+                  "dd-scroll",
+                  "moodle-core-dragdrop",
+                  "moodle-core-notification",
+                ],
+              },
+              "moodle-core-handlebars": {
+                condition: { trigger: "handlebars", when: "after" },
+              },
+              "moodle-core-dragdrop": {
+                requires: [
+                  "base",
+                  "node",
+                  "io",
+                  "dom",
+                  "dd",
+                  "event-key",
+                  "event-focus",
+                  "moodle-core-notification",
+                ],
+              },
+              "moodle-core-event": { requires: ["event-custom"] },
+              "moodle-core-maintenancemodetimer": {
+                requires: ["base", "node"],
+              },
+              "moodle-core-actionmenu": {
+                requires: ["base", "event", "node-event-simulate"],
+              },
+              "moodle-core_availability-form": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "event-delegate",
+                  "panel",
+                  "moodle-core-notification-dialogue",
+                  "json",
+                ],
+              },
+              "moodle-course-util": {
+                requires: ["node"],
+                use: ["moodle-course-util-base"],
+                submodules: {
+                  "moodle-course-util-base": {},
+                  "moodle-course-util-section": {
+                    requires: ["node", "moodle-course-util-base"],
+                  },
+                  "moodle-course-util-cm": {
+                    requires: ["node", "moodle-course-util-base"],
+                  },
+                },
+              },
+              "moodle-course-dragdrop": {
+                requires: [
+                  "base",
+                  "node",
+                  "io",
+                  "dom",
+                  "dd",
+                  "dd-scroll",
+                  "moodle-core-dragdrop",
+                  "moodle-core-notification",
+                  "moodle-course-coursebase",
+                  "moodle-course-util",
+                ],
+              },
+              "moodle-course-management": {
+                requires: [
+                  "base",
+                  "node",
+                  "io-base",
+                  "moodle-core-notification-exception",
+                  "json-parse",
+                  "dd-constrain",
+                  "dd-proxy",
+                  "dd-drop",
+                  "dd-delegate",
+                  "node-event-delegate",
+                ],
+              },
+              "moodle-course-categoryexpander": {
+                requires: ["node", "event-key"],
+              },
+              "moodle-form-shortforms": {
+                requires: [
+                  "node",
+                  "base",
+                  "selector-css3",
+                  "moodle-core-event",
+                ],
+              },
+              "moodle-form-dateselector": {
+                requires: ["base", "node", "overlay", "calendar"],
+              },
+              "moodle-question-searchform": { requires: ["base", "node"] },
+              "moodle-question-chooser": {
+                requires: ["moodle-core-chooserdialogue"],
+              },
+              "moodle-availability_completion-form": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "moodle-core_availability-form",
+                ],
+              },
+              "moodle-availability_date-form": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "io",
+                  "moodle-core_availability-form",
+                ],
+              },
+              "moodle-availability_grade-form": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "moodle-core_availability-form",
+                ],
+              },
+              "moodle-availability_group-form": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "moodle-core_availability-form",
+                ],
+              },
+              "moodle-availability_grouping-form": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "moodle-core_availability-form",
+                ],
+              },
+              "moodle-availability_profile-form": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "moodle-core_availability-form",
+                ],
+              },
+              "moodle-mod_assign-history": { requires: ["node", "transition"] },
+              "moodle-mod_attendance-groupfilter": {
+                requires: ["base", "node"],
+              },
+              "moodle-mod_customcert-rearrange": {
+                requires: ["dd-delegate", "dd-drag"],
+              },
+              "moodle-mod_quiz-questionchooser": {
+                requires: [
+                  "moodle-core-chooserdialogue",
+                  "moodle-mod_quiz-util",
+                  "querystring-parse",
+                ],
+              },
+              "moodle-mod_quiz-util": {
+                requires: ["node", "moodle-core-actionmenu"],
+                use: ["moodle-mod_quiz-util-base"],
+                submodules: {
+                  "moodle-mod_quiz-util-base": {},
+                  "moodle-mod_quiz-util-slot": {
+                    requires: ["node", "moodle-mod_quiz-util-base"],
+                  },
+                  "moodle-mod_quiz-util-page": {
+                    requires: ["node", "moodle-mod_quiz-util-base"],
+                  },
+                },
+              },
+              "moodle-mod_quiz-dragdrop": {
+                requires: [
+                  "base",
+                  "node",
+                  "io",
+                  "dom",
+                  "dd",
+                  "dd-scroll",
+                  "moodle-core-dragdrop",
+                  "moodle-core-notification",
+                  "moodle-mod_quiz-quizbase",
+                  "moodle-mod_quiz-util-base",
+                  "moodle-mod_quiz-util-page",
+                  "moodle-mod_quiz-util-slot",
+                  "moodle-course-util",
+                ],
+              },
+              "moodle-mod_quiz-toolboxes": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "event-key",
+                  "io",
+                  "moodle-mod_quiz-quizbase",
+                  "moodle-mod_quiz-util-slot",
+                  "moodle-core-notification-ajaxexception",
+                ],
+              },
+              "moodle-mod_quiz-autosave": {
+                requires: [
+                  "base",
+                  "node",
+                  "event",
+                  "event-valuechange",
+                  "node-event-delegate",
+                  "io-form",
+                  "datatype-date-format",
+                ],
+              },
+              "moodle-mod_quiz-modform": {
+                requires: ["base", "node", "event"],
+              },
+              "moodle-mod_quiz-quizbase": { requires: ["base", "node"] },
+              "moodle-message_airnotifier-toolboxes": {
+                requires: ["base", "node", "io"],
+              },
+              "moodle-report_eventlist-eventfilter": {
+                requires: [
+                  "base",
+                  "event",
+                  "node",
+                  "node-event-delegate",
+                  "datatable",
+                  "autocomplete",
+                  "autocomplete-filters",
+                ],
+              },
+              "moodle-report_loglive-fetchlogs": {
+                requires: [
+                  "base",
+                  "event",
+                  "node",
+                  "io",
+                  "node-event-delegate",
+                ],
+              },
+              "moodle-gradereport_history-userselector": {
+                requires: [
+                  "escape",
+                  "event-delegate",
+                  "event-key",
+                  "handlebars",
+                  "io-base",
+                  "json-parse",
+                  "moodle-core-notification-dialogue",
+                ],
+              },
+              "moodle-qbank_editquestion-chooser": {
+                requires: ["moodle-core-chooserdialogue"],
+              },
+              "moodle-tool_lp-dragdrop-reorder": {
+                requires: ["moodle-core-dragdrop"],
+              },
+              "moodle-assignfeedback_editpdf-editor": {
+                requires: [
+                  "base",
+                  "event",
+                  "node",
+                  "io",
+                  "graphics",
+                  "json",
+                  "event-move",
+                  "event-resize",
+                  "transition",
+                  "querystring-stringify-simple",
+                  "moodle-core-notification-dialog",
+                  "moodle-core-notification-alert",
+                  "moodle-core-notification-warning",
+                  "moodle-core-notification-exception",
+                  "moodle-core-notification-ajaxexception",
+                ],
+              },
+            },
+          },
+          gallery: {
+            name: "gallery",
+            base: "https:\/\/riwi-test.unhosting.site\/lib\/yuilib\/gallery\/",
+            combine: true,
+            comboBase:
+              "https:\/\/riwi-test.unhosting.site\/theme\/yui_combo.php?",
+            ext: false,
+            root: "gallery\/1755932720\/",
+            patterns: { "gallery-": { group: "gallery" } },
+          },
+        },
+        modules: {
+          core_filepicker: {
+            name: "core_filepicker",
+            fullpath:
+              "https:\/\/riwi-test.unhosting.site\/lib\/javascript.php\/1755932720\/repository\/filepicker.js",
+            requires: [
+              "base",
+              "node",
+              "node-event-simulate",
+              "json",
+              "async-queue",
+              "io-base",
+              "io-upload-iframe",
+              "io-form",
+              "yui2-treeview",
+              "panel",
+              "cookie",
+              "datatable",
+              "datatable-sort",
+              "resize-plugin",
+              "dd-plugin",
+              "escape",
+              "moodle-core_filepicker",
+              "moodle-core-notification-dialogue",
+            ],
+          },
+          core_comment: {
+            name: "core_comment",
+            fullpath:
+              "https:\/\/riwi-test.unhosting.site\/lib\/javascript.php\/1755932720\/comment\/comment.js",
+            requires: [
+              "base",
+              "io-base",
+              "node",
+              "json",
+              "yui2-animation",
+              "overlay",
+              "escape",
+            ],
+          },
+        },
+        logInclude: [],
+        logExclude: [],
+        logLevel: null,
+      };
+      M.yui.loader = { modules: {} };
+
+      //]]>
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body
+    id="page-login-index"
+    class="format-site path-login chrome dir-ltr lang-es_co yui-skin-sam yui3-skin-sam riwi-test-unhosting-site pagelayout-login course-1 context-1 notloggedin theme"
+  >
+    <div
+      class="toast-wrapper mx-auto py-0 fixed-top"
+      role="status"
+      aria-live="polite"
+    ></div>
+    <div id="page-wrapper">
+      <div>
+        <a class="visually-hidden-focusable" href="#maincontent"
+          >Saltar al contenido principal</a
+        >
+      </div>
+      <script src="https://riwi-test.unhosting.site/lib/javascript.php/1755932720/lib/polyfills/polyfill.js"></script>
+      <script src="https://riwi-test.unhosting.site/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.js"></script>
+      <script src="https://riwi-test.unhosting.site/lib/javascript.php/1755932720/lib/javascript-static.js"></script>
+      <script>
+        //<![CDATA[
+        document.body.className += " jsenabled";
+        //]]>
+      </script>
+
+      <nav
+        id="header"
+        class="moodle-based-header fixed-top navbar navbar-light bg-faded navbar-static-top navbar-expand moodle-has-zindex"
+        aria-label="Navegación del sitio"
+      >
+        <div class="container-fluid navbar-nav">
+          <button
+            class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0"
+            data-toggler="drawers"
+            data-action="toggle"
+            data-target="theme_boost-drawers-primary"
+          >
+            <span class="navbar-toggler-icon"></span>
+            <span class="sr-only">Panel lateral</span>
+          </button>
+          <a
+            href="https://riwi-test.unhosting.site/?redirect=0"
+            class="navbar-brand has-logo"
+          >
+            <span class="logo">
+              <img
+                src="//riwi-test.unhosting.site/pluginfile.php/1/theme_academi/logo/1755932720/Imagen1%20%281%29.png"
+                alt="Riwi"
+              />
+            </span>
+          </a>
+
+          <div class="primary-navigation">
+            <nav class="moremenu navigation">
+              <ul
+                id="moremenu-68ab9784ddb19-navbar-nav"
+                role="menubar"
+                class="nav more-nav navbar-nav"
+              >
+                <li
+                  data-key="home"
+                  class="nav-item"
+                  role="none"
+                  data-forceintomoremenu="false"
+                >
+                  <a
+                    role="menuitem"
+                    class="nav-link active"
+                    href="https://riwi-test.unhosting.site/"
+                    aria-current="true"
+                    data-disableactive="true"
+                  >
+                    Página Principal
+                  </a>
+                </li>
+                <li
+                  class="dropdown nav-item"
+                  role="none"
+                  data-forceintomoremenu="false"
+                >
+                  <a
+                    class="dropdown-toggle nav-link"
+                    id="drop-down-68ab9784dda52"
+                    role="menuitem"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    href="#"
+                    aria-controls="drop-down-menu-68ab9784dda52"
+                    tabindex="-1"
+                  >
+                    Entrenamiento
+                  </a>
+                  <div
+                    class="dropdown-menu"
+                    role="menu"
+                    id="drop-down-menu-68ab9784dda52"
+                    aria-labelledby="drop-down-68ab9784dda52"
+                  >
+                    <a
+                      class="dropdown-item"
+                      role="menuitem"
+                      href="https://riwi-test.unhosting.site/course/index.php?categoryid=15"
+                      data-disableactive="true"
+                      tabindex="-1"
+                    >
+                      Sede Medellín
+                    </a>
+                    <a
+                      class="dropdown-item"
+                      role="menuitem"
+                      href="https://riwi-test.unhosting.site/course/index.php?categoryid=35"
+                      data-disableactive="true"
+                      tabindex="-1"
+                    >
+                      Sede Barranquilla
+                    </a>
+                    <a
+                      class="dropdown-item"
+                      role="menuitem"
+                      href="https://riwi-test.unhosting.site/course/index.php?categoryid=24"
+                      data-disableactive="true"
+                      tabindex="-1"
+                    >
+                      Workshops
+                    </a>
+                    <a
+                      class="dropdown-item"
+                      role="menuitem"
+                      href="https://riwi-test.unhosting.site/course/index.php?categoryid=28"
+                      data-disableactive="true"
+                      tabindex="-1"
+                    >
+                      Formación a la medida
+                    </a>
+                  </div>
+                </li>
+                <li
+                  role="none"
+                  class="nav-item dropdown dropdownmoremenu d-none"
+                  data-region="morebutton"
+                >
+                  <a
+                    class="dropdown-toggle nav-link"
+                    href="#"
+                    id="moremenu-dropdown-68ab9784ddb19"
+                    role="menuitem"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    tabindex="-1"
+                  >
+                    Más
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-start"
+                    data-region="moredropdown"
+                    aria-labelledby="moremenu-dropdown-68ab9784ddb19"
+                    role="menu"
+                  ></ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <ul class="navbar-nav d-none d-md-flex my-1 px-1">
+            <!-- page_heading_menu -->
+          </ul>
+
+          <div id="usernavigation" class="navbar-nav">
+            <div class="langmenu">
+              <div class="dropdown show">
+                <a
+                  href="#"
+                  role="button"
+                  id="lang-menu-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-label="Idioma"
+                  aria-haspopup="true"
+                  aria-controls="lang-action-menu"
+                  class="btn dropdown-toggle"
+                >
+                  <i
+                    class="icon fa fa-language fa-fw me-1"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="langbutton"> Español </span>
+                  <b class="caret"></b>
+                </a>
+                <div
+                  role="menu"
+                  aria-labelledby="lang-menu-toggle"
+                  id="lang-action-menu"
+                  class="dropdown-menu dropdown-menu-end"
+                >
+                  <a
+                    href="https://riwi-test.unhosting.site/login/index.php?lang=en_us"
+                    class="dropdown-item ps-5"
+                    role="menuitem"
+                    lang="en"
+                  >
+                    English
+                  </a>
+                  <a
+                    href="#"
+                    class="dropdown-item ps-5"
+                    role="menuitem"
+                    aria-current="true"
+                  >
+                    Español
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              id="searchinput-navbar-68ab9784de96c68ab9784da67b8"
+              class="simplesearchform"
+            >
+              <div class="collapse" id="searchform-navbar">
+                <form
+                  autocomplete="off"
+                  action="https://riwi-test.unhosting.site/search/index.php"
+                  method="get"
+                  accept-charset="utf-8"
+                  class="mform d-flex flex-wrap align-items-center searchform-navbar"
+                >
+                  <input type="hidden" name="context" value="1" />
+                  <div
+                    class="input-group"
+                    role="group"
+                    aria-labelledby="searchgrouplabel-68ab9784de96c68ab9784da67b8"
+                  >
+                    <span
+                      id="searchgrouplabel-68ab9784de96c68ab9784da67b8"
+                      class="visually-hidden"
+                      >Sitewide search</span
+                    >
+                    <input
+                      type="text"
+                      id="searchinput-68ab9784de96c68ab9784da67b8"
+                      class="form-control withclear"
+                      placeholder="Buscar"
+                      aria-label="Buscar"
+                      name="q"
+                      data-region="input"
+                      autocomplete="off"
+                    />
+                    <label for="searchinput-68ab9784de96c68ab9784da67b8">
+                      <span class="visually-hidden">Buscar</span>
+                    </label>
+                    <a
+                      class="btn btn-close"
+                      data-action="closesearch"
+                      data-bs-toggle="collapse"
+                      href="#searchform-navbar"
+                      role="button"
+                      title="Cerrar"
+                    >
+                      <span class="visually-hidden">Cerrar</span>
+                    </a>
+                    <button
+                      type="submit"
+                      class="btn btn-submit"
+                      data-action="submit"
+                      title="Perform search"
+                    >
+                      <i
+                        class="icon fa fa-magnifying-glass fa-fw"
+                        aria-hidden="true"
+                      ></i>
+                      <span class="visually-hidden">Perform search</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <a
+                class="rounded-0 nav-link icon-no-margin"
+                data-bs-toggle="collapse"
+                data-action="opensearch"
+                href="#searchform-navbar"
+                role="button"
+                aria-expanded="false"
+                aria-controls="searchform-navbar"
+                title="Selector de búsqueda de entrada"
+              >
+                <i
+                  class="icon fa fa-magnifying-glass fa-fw"
+                  aria-hidden="true"
+                ></i>
+                <span class="visually-hidden"
+                  >Selector de búsqueda de entrada</span
+                >
+              </a>
+            </div>
+
+            <div
+              class="d-flex align-items-stretch usermenu-container"
+              data-region="usermenu"
+            >
+              <div class="usermenu">
+                <span class="login ps-2">
+                  <a href="https://riwi-test.unhosting.site/login/index.php"
+                    >Acceder</a
+                  >
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- search_box -->
+        </div>
+      </nav>
+
+      <div
+        class="drawer drawer-left drawer-primary d-print-none not-initialized"
+        data-region="fixed-drawer"
+        id="theme_boost-drawers-primary"
+        data-preference=""
+        data-state="show-drawer-primary"
+        data-forceopen="0"
+        data-close-on-resize="1"
+      >
+        <div class="drawerheader">
+          <button
+            class="btn btn-icon drawertoggle hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-primary"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Cerrar caja"
+          >
+            <i class="icon fa fa-xmark fa-fw" aria-hidden="true"></i>
+          </button>
+          <a
+            href="https://riwi-test.unhosting.site/"
+            title="Riwi"
+            data-region="site-home-link"
+            class="aabtn text-reset d-flex align-items-center py-1 h-100"
+          >
+            <img
+              src="https://riwi-test.unhosting.site/pluginfile.php/1/core_admin/logocompact/300x300/1755932720/Imagen1.png"
+              class="logo py-1 h-100"
+              alt="Riwi"
+            />
+          </a>
+
+          <div class="drawerheadercontent hidden"></div>
+        </div>
+        <div class="drawercontent drag-container" data-usertour="scroller">
+          <div class="list-group">
+            <a
+              href="https://riwi-test.unhosting.site/"
+              class="list-group-item list-group-item-action active"
+              aria-current="true"
+            >
+              Página Principal
+            </a>
+            <a
+              id="drop-down-1"
+              href="#"
+              class="list-group-item list-group-item-action icons-collapse-expand collapsed d-flex"
+              data-bs-toggle="collapse"
+              data-bs-target="#drop-down-menu-1"
+              aria-expanded="false"
+              aria-controls="drop-down-menu-1"
+            >
+              Entrenamiento
+              <span class="ms-auto expanded-icon icon-no-margin mx-2">
+                <i class="icon fa fa-chevron-down fa-fw" aria-hidden="true"></i>
+                <span class="visually-hidden"> Colapsar </span>
+              </span>
+              <span class="ms-auto collapsed-icon icon-no-margin mx-2">
+                <i
+                  class="icon fa fa-chevron-right fa-fw"
+                  aria-hidden="true"
+                ></i>
+                <span class="visually-hidden"> Expandir </span>
+              </span>
+            </a>
+            <div
+              class="collapse list-group-item p-0 border-0"
+              role="menu"
+              id="drop-down-menu-1"
+              aria-labelledby="drop-down-1"
+            >
+              <a
+                href="https://riwi-test.unhosting.site/course/index.php?categoryid=15"
+                class="ps-5 bg-light list-group-item list-group-item-action"
+              >
+                Sede Medellín</a
+              >
+              <a
+                href="https://riwi-test.unhosting.site/course/index.php?categoryid=35"
+                class="ps-5 bg-light list-group-item list-group-item-action"
+              >
+                Sede Barranquilla</a
+              >
+              <a
+                href="https://riwi-test.unhosting.site/course/index.php?categoryid=24"
+                class="ps-5 bg-light list-group-item list-group-item-action"
+              >
+                Workshops</a
+              >
+              <a
+                href="https://riwi-test.unhosting.site/course/index.php?categoryid=28"
+                class="ps-5 bg-light list-group-item list-group-item-action"
+              >
+                Formación a la medida</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page" class="container-fluid mt-0">
+        <div id="page-content" class="row">
+          <div id="region-main-box" class="col-12">
+            <section
+              id="region-main"
+              class="col-12 h-100"
+              aria-label="Contenido"
+            >
+              <div class="login-wrapper">
+                <div class="login-container">
+                  <div role="main">
+                    <span id="maincontent"></span>
+                    <div class="loginform">
+                      <div id="loginlogo" class="login-logo">
+                        <img
+                          id="logoimage"
+                          src="https://riwi-test.unhosting.site/pluginfile.php/1/core_admin/logo/0x200/1755932720/Imagen1.png"
+                          class="img-fluid"
+                          alt="Riwi"
+                        />
+                        <h1 class="login-heading visually-hidden">
+                          Entrar a Riwi
+                        </h1>
+                      </div>
+                      <form
+                        class="login-form"
+                        action="https://riwi-test.unhosting.site/login/index.php"
+                        method="post"
+                        id="login"
+                      >
+                        <input
+                          id="anchor"
+                          type="hidden"
+                          name="anchor"
+                          value=""
+                        />
+                        <script>
+                          document.getElementById("anchor").value =
+                            location.hash;
+                        </script>
+                        <input
+                          type="hidden"
+                          name="logintoken"
+                          value="crDllJA7l8D4nBYNOJlrwMRUmyMtybJ7"
+                        />
+                        <div class="login-form-username mb-3">
+                          <label for="username" class="visually-hidden">
+                            Nombre de usuario
+                          </label>
+                          <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            class="form-control form-control-lg"
+                            value=""
+                            placeholder="Nombre de usuario"
+                            autocomplete="username"
+                          />
+                        </div>
+                        <div class="login-form-password mb-3">
+                          <label for="password" class="visually-hidden"
+                            >Contraseña</label
+                          >
+                          <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            value=""
+                            class="form-control form-control-lg"
+                            placeholder="Contraseña"
+                            autocomplete="current-password"
+                          />
+                        </div>
+                        <div class="login-form-submit mb-3">
+                          <button
+                            class="btn btn-primary btn-lg"
+                            type="submit"
+                            id="loginbtn"
+                          >
+                            Acceder
+                          </button>
+                        </div>
+                        <div class="login-form-forgotpassword mb-3">
+                          <a
+                            href="https://riwi-test.unhosting.site/login/forgot_password.php"
+                            >¿Olvidó su contraseña?</a
+                          >
+                        </div>
+                      </form>
+                      <div class="login-divider"></div>
+                      <div class="login-identityproviders">
+                        <h2 class="login-heading">
+                          Identifíquese usando su cuenta en:
+                        </h2>
+                        <a
+                          class="btn login-identityprovider-btn w-100"
+                          href="https://riwi-test.unhosting.site/auth/oauth2/login.php?id=1&amp;wantsurl=%2F&amp;sesskey=41T6S3EKcM"
+                        >
+                          <img
+                            src="https://accounts.google.com/favicon.ico"
+                            alt=""
+                            width="24"
+                            height="24"
+                          />
+                          Google
+                        </a>
+                      </div>
+                      <div class="login-divider"></div>
+                      <div class="d-flex">
+                        <div class="login-languagemenu">
+                          <div
+                            class="action-menu moodle-actionmenu"
+                            id="action-menu-0"
+                            data-enhance="moodle-core-actionmenu"
+                          >
+                            <div
+                              class="menubar d-flex"
+                              id="action-menu-0-menubar"
+                            >
+                              <div class="action-menu-trigger">
+                                <div class="dropdown">
+                                  <a
+                                    href="#"
+                                    tabindex="0"
+                                    class="dropdown-toggle icon-no-margin"
+                                    id="action-menu-toggle-0"
+                                    aria-label="Español"
+                                    data-bs-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    aria-controls="action-menu-0-menu"
+                                  >
+                                    Español
+
+                                    <b class="caret"></b>
+                                  </a>
+                                  <div
+                                    class="dropdown-menu menu dropdown-menu-end"
+                                    id="action-menu-0-menu"
+                                    data-rel="menu-content"
+                                    aria-labelledby="action-menu-toggle-0"
+                                    role="menu"
+                                  >
+                                    <a
+                                      href="https://riwi-test.unhosting.site/login/index.php?lang=en_us"
+                                      class="dropdown-item menu-action"
+                                      data-lang="en_us"
+                                      lang="en"
+                                      role="menuitem"
+                                      tabindex="-1"
+                                    >
+                                      <span class="menu-action-text"
+                                        >English</span
+                                      >
+                                    </a>
+                                    <a
+                                      href="#"
+                                      class="dropdown-item menu-action"
+                                      role="menuitem"
+                                      tabindex="-1"
+                                    >
+                                      <span class="menu-action-text"
+                                        >Español</span
+                                      >
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="divider border-start align-self-center mx-3"
+                        ></div>
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-modal="alert"
+                          data-modal-title-str='["cookiesenabled", "core"]'
+                          data-modal-content-str='["cookiesenabled_help_html", "core"]'
+                        >
+                          Aviso de Cookies
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="page-footer" class="footer-popover footer-dark text-light">
+      <div id="footer">
+        <div class="footer-main">
+          <div class="container-fluid">
+            <div id="course-footer"></div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="infoarea">
+                  <div class="footer-logo">
+                    <a href="#"
+                      ><img
+                        src="//riwi-test.unhosting.site/pluginfile.php/1/theme_academi/footerlogo/1755932720/Imagen1%20%281%29.png"
+                        width="100"
+                        height="100"
+                        alt="Academi"
+                    /></a>
+                  </div>
+                  <p>
+                    <span
+                      ><em style=""
+                        ><span
+                          >Transformamos la gestión y adquisición de talento
+                          tech <strong>entrenando jóvenes</strong> en
+                          <strong>competencias técnicas y humanas</strong>
+                          distintivas, convirtiéndolos en
+                          <strong>protagonistas valiosos</strong>&nbsp;que
+                          desarrollan software para
+                          <strong>transformar sus vidas</strong
+                          >.<br /></span></em
+                    ></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 footer-links-block">
+                <div class="foot-links">
+                  <h2></h2>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div class="contact-info">
+                  <h2>Contacto</h2>
+                  <p>
+                    Cl. 16 #55-129, Guayabal, Medellín CC. De Moda Outlet, piso
+                    3
+                  </p>
+                  <p>
+                    <i class="fa fa-phone-square"></i> Teléfono : +57 3017325327
+                  </p>
+                  <p>
+                    <i class="fa fa-envelope"></i> Correo electrónico :
+                    <a class="mail-link" href="mailto:info@riwi.io"
+                      >info@riwi.io</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div class="social-media">
+                  <h2>Redes sociales</h2>
+                  <ul>
+                    <li class="smedia-4">
+                      <a
+                        href="https://www.facebook.com/profile.php?id=100092420949391&amp;locale=es_LA"
+                        target="_blank"
+                        style="background-color: #3598dc"
+                      >
+                        <span class="media-icon">
+                          <i class="fa fa-facebook-f"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="smedia-5">
+                      <a
+                        href="https://www.instagram.com/riwi.io/"
+                        target="_blank"
+                        style="background-color: #f131b8"
+                      >
+                        <span class="media-icon">
+                          <i class="fa fa-instagram"></i>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="smedia-6">
+                      <a
+                        href="https://www.linkedin.com/company/riwi-io/mycompany/"
+                        target="_blank"
+                        style="background-color: #0a66c2"
+                      >
+                        <span class="media-icon">
+                          <i class="fa fa-linkedin"></i>
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright © 2023</p>
+          <div class="footer-content-debugging">
+            <div class="container"></div>
+          </div>
+        </div>
+        <div data-region="footer-container-popover">
+          <button
+            class="btn btn-icon bg-secondary icon-no-margin btn-footer-popover"
+            data-action="footer-popover"
+            aria-label="Mostrar pie de página"
+          >
+            <i class="icon fa fa-question fa-fw" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div
+          class="footer-content-popover container"
+          data-region="footer-content-popover"
+        >
+          <div class="footer-section p-3 border-bottom">
+            <div class="logininfo">
+              <div class="logininfo">Usted no se ha identificado.</div>
+            </div>
+            <div class="tool_usertours-resettourcontainer"></div>
+            <div class="tool_dataprivacy">
+              <a
+                href="https://riwi-test.unhosting.site/admin/tool/dataprivacy/summary.php"
+                >Resumen de retención de datos</a
+              >
+            </div>
+            <div>
+              <a
+                class="mobilelink"
+                href="https://download.moodle.org/mobile?version=2025041402.03&amp;lang=es_co&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile"
+                >Descargar la app para dispositivos móviles</a
+              >
+            </div>
+            <script>
+              //<![CDATA[
+              var require = {
+                baseUrl:
+                  "https://riwi-test.unhosting.site/lib/requirejs.php/1755932720/",
+                // We only support AMD modules with an explicit define() statement.
+                enforceDefine: true,
+                skipDataMain: true,
+                waitSeconds: 0,
+
+                paths: {
+                  jquery:
+                    "https://riwi-test.unhosting.site/lib/javascript.php/1755932720/lib/jquery/jquery-3.7.1.min",
+                  jqueryui:
+                    "https://riwi-test.unhosting.site/lib/javascript.php/1755932720/lib/jquery/ui-1.14.1/jquery-ui.min",
+                  jqueryprivate:
+                    "https://riwi-test.unhosting.site/lib/javascript.php/1755932720/lib/requirejs/jquery-private",
+                },
+
+                // Custom jquery config map.
+                map: {
+                  // '*' means all modules will get 'jqueryprivate'
+                  // for their 'jquery' dependency.
+                  "*": { jquery: "jqueryprivate" },
+
+                  // 'jquery-private' wants the real jQuery module
+                  // though. If this line was not here, there would
+                  // be an unresolvable cyclic dependency.
+                  jqueryprivate: { jquery: "jquery" },
+                },
+              };
+
+              //]]>
+            </script>
+            <script src="https://riwi-test.unhosting.site/lib/javascript.php/1755932720/lib/requirejs/require.min.js"></script>
+            <script>
+              //<![CDATA[
+              M.util.js_pending("core/first");
+              require(["core/first"], function () {
+                require(["core/prefetch"]);
+                M.util.js_pending("filter_mathjaxloader/loader");
+                require(["filter_mathjaxloader/loader"], function (amd) {
+                  amd.configure({
+                    mathjaxurl:
+                      "https:\/\/stack-21aa429c-fcf9-4c0f-932c-041bbcab405e.unhosting.site\/static\/mathjax\/MathJax.js",
+                    mathjaxconfig: "",
+                    lang: "es",
+                  });
+                  M.util.js_complete("filter_mathjaxloader/loader");
+                });
+                require(["media_videojs/loader"], function (loader) {
+                  loader.setUp("es");
+                });
+                M.util.js_pending("theme_academi/theme");
+                require(["theme_academi/theme"], function (amd) {
+                  amd.init();
+                  M.util.js_complete("theme_academi/theme");
+                });
+
+                require(["jquery", "core/custom_interaction_events"], function (
+                  $,
+                  CustomEvents
+                ) {
+                  CustomEvents.define("#single_select68ab9784da67b2", [
+                    CustomEvents.events.accessibleChange,
+                  ]);
+                  $("#single_select68ab9784da67b2").on(
+                    CustomEvents.events.accessibleChange,
+                    function () {
+                      var ignore = $(this)
+                        .find(":selected")
+                        .attr("data-ignore");
+                      if (typeof ignore === typeof undefined) {
+                        $("#single_select_f68ab9784da67b1").submit();
+                      }
+                    }
+                  );
+                });
+                require(["jquery", "core/custom_interaction_events"], function (
+                  $,
+                  CustomEvents
+                ) {
+                  CustomEvents.define("#single_select68ab9784da67b6", [
+                    CustomEvents.events.accessibleChange,
+                  ]);
+                  $("#single_select68ab9784da67b6").on(
+                    CustomEvents.events.accessibleChange,
+                    function () {
+                      var ignore = $(this)
+                        .find(":selected")
+                        .attr("data-ignore");
+                      if (typeof ignore === typeof undefined) {
+                        $("#single_select_f68ab9784da67b5").submit();
+                      }
+                    }
+                  );
+                });
+                require(["core/moremenu"], function (moremenu) {
+                  moremenu(
+                    document.querySelector("#moremenu-68ab9784ddb19-navbar-nav")
+                  );
+                });
+                require(["jquery"], function ($) {
+                  const container =
+                    document.getElementById("searchform-navbar");
+                  const opensearch = container.parentElement.querySelector(
+                    '[data-action="opensearch"]'
+                  );
+                  const input = container.querySelector(
+                    '[data-region="input"]'
+                  );
+                  const submit = container.querySelector(
+                    '[data-action="submit"]'
+                  );
+
+                  submit.addEventListener("click", (e) => {
+                    if (input.valUE === "") {
+                      e.preventDefault();
+                    }
+                  });
+
+                  container.addEventListener("hidden.bs.collapse", () => {
+                    opensearch.classList.remove("d-none");
+                    input.value = "";
+                  });
+
+                  container.addEventListener("show.bs.collapse", () => {
+                    opensearch.classList.add("d-none");
+                  });
+
+                  container.addEventListener("shown.bs.collapse", () => {
+                    input.focus();
+                  });
+                });
+                require(["core/usermenu"], function (UserMenu) {
+                  UserMenu.init();
+                });
+                M.util.js_pending("theme_boost/drawers:load");
+                require(["theme_boost/drawers"], function () {
+                  M.util.js_complete("theme_boost/drawers:load");
+                });
+                M.util.js_pending("theme_boost/loader");
+                require(["theme_boost/loader", "theme_boost/drawer"], function (
+                  Loader,
+                  Drawer
+                ) {
+                  Drawer.init();
+                  M.util.js_complete("theme_boost/loader");
+                });
+                require(["theme_boost/footer-popover"], function (
+                  FooterPopover
+                ) {
+                  FooterPopover.init();
+                });
+                M.util.js_pending("theme_boost/loader");
+                require(["theme_boost/loader"], function () {
+                  M.util.js_complete("theme_boost/loader");
+                });
+                require(["core/togglesensitive"], function (ToggleSensitive) {
+                  ToggleSensitive.init("password", 1);
+                });
+                require(["core_form/submit"], function (Submit) {
+                  Submit.init("loginbtn");
+                });
+                M.util.js_pending("core/notification");
+                require(["core/notification"], function (amd) {
+                  amd.init(1, []);
+                  M.util.js_complete("core/notification");
+                });
+                M.util.js_pending("core/log");
+                require(["core/log"], function (amd) {
+                  amd.setConfig({ level: "warn" });
+                  M.util.js_complete("core/log");
+                });
+                M.util.js_pending("core/page_global");
+                require(["core/page_global"], function (amd) {
+                  amd.init();
+                  M.util.js_complete("core/page_global");
+                });
+                M.util.js_pending("core/utility");
+                require(["core/utility"], function (amd) {
+                  M.util.js_complete("core/utility");
+                });
+                M.util.js_pending("core/storage_validation");
+                require(["core/storage_validation"], function (amd) {
+                  amd.init(null);
+                  M.util.js_complete("core/storage_validation");
+                });
+                M.util.js_complete("core/first");
+              });
+              //]]>
+            </script>
+            <script>
+              //<![CDATA[
+              M.str = {
+                moodle: {
+                  lastmodified: "\u00daltima modificaci\u00f3n",
+                  name: "Nombre",
+                  error: "Error",
+                  info: "Informaci\u00f3n",
+                  yes: "S\u00ed",
+                  no: "No",
+                  cancel: "Cancelar",
+                  confirm: "Confirmar",
+                  areyousure: "\u00bfEst\u00e1 seguro?",
+                  closebuttontitle: "Cerrar",
+                  unknownerror: "Error desconocido",
+                  file: "Archivo",
+                  url: "URL",
+                  collapseall: "Colapsar todo",
+                  expandall: "Expandir todo",
+                },
+                repository: {
+                  type: "Tipo",
+                  size: "Tama\u00f1o",
+                  invalidjson: "Cadena JSON no v\u00e1lida",
+                  nofilesattached: "No se han adjuntado archivos",
+                  filepicker: "Selector de archivos",
+                  logout: "Salir",
+                  nofilesavailable: "No hay archivos disponibles",
+                  norepositoriesavailable:
+                    "Lo sentimos, ninguno de sus repositorios actuales puede devolver archivos en el formato solicitado.",
+                  fileexistsdialogheader: "El archivo existe",
+                  fileexistsdialog_editor:
+                    "Un archivo con ese nombre ha sido anexado al texto que Usted est\u00e1 editando",
+                  fileexistsdialog_filemanager:
+                    "Ya ha sido anexado un archivo con ese nombre",
+                  renameto: 'Cambiar el nombre a "{$a}"',
+                  referencesexist: "Existen {$a} enlaces a este archivo",
+                  select: "Seleccionar",
+                },
+                admin: {
+                  confirmdeletecomments:
+                    "\u00bfSeguro que quiere eliminar el\/los comentario(s) seleccionados?",
+                  confirmation: "Confirmaci\u00f3n",
+                },
+                debug: {
+                  debuginfo: "Informaci\u00f3n de depuraci\u00f3n",
+                  line: "L\u00ednea",
+                  stacktrace: "Trazado de la pila (stack)",
+                },
+                langconfig: { labelsep: ":" },
+              };
+              //]]>
+            </script>
+            <script>
+              //<![CDATA[
+              (function () {
+                M.util.help_popups.setup(Y);
+                M.util.js_pending("random68ab9784da67b11");
+                Y.on("domready", function () {
+                  M.util.js_complete("init");
+                  M.util.js_complete("random68ab9784da67b11");
+                });
+              })();
+              //]]>
+            </script>
+          </div>
+
+          <div class="footer-section p-3">
+            <div>Desarrollado por <a href="https://moodle.com">Moodle</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      id="backToTop"
+      href="#"
+      class="btn btn-primary btn-lg back-to-top"
+      role="button"
+      ><span class="fa fa-angle-up"></span
+    ></a>
+  </body>
+</html>
