@@ -20,6 +20,9 @@ importers:
       dotenv:
         specifier: ^17.2.1
         version: 17.2.1
+      dotenv-mono:
+        specifier: ^1.5.0
+        version: 1.5.0
 
   apps/api:
     dependencies:
@@ -36,7 +39,7 @@ importers:
         specifier: ^3.14.3
         version: 3.14.3
 
-  apps/backend/scrapper:
+  apps/scrapper:
     dependencies:
       axios:
         specifier: ^1.11.0
@@ -47,9 +50,6 @@ importers:
       cors:
         specifier: ^2.8.5
         version: 2.8.5
-      dotenv-mono:
-        specifier: ^1.5.0
-        version: 1.5.0
       express:
         specifier: ^5.1.0
         version: 5.1.0
