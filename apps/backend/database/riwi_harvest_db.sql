@@ -94,10 +94,10 @@ CREATE TABLE `courses` (
 
 
 CREATE TABLE `courses_categories` (
-	`id_couse_category` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+	`id_course_category` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`course_category_name` VARCHAR(255) NOT NULL,
 	`course_category_name_id` INTEGER NOT NULL,
-	PRIMARY KEY(`id_couse_category`)
+	PRIMARY KEY(`id_course_category`)
 );
 
 
@@ -124,10 +124,10 @@ CREATE TABLE `progress` (
 
 ALTER TABLE `coders`
 ADD FOREIGN KEY(`id_clan`) REFERENCES `clan`(`id_clan`)
-ON UPDATE CASCADE ON DELETE CASCADE;
+ON UPDATE CASCADE ON DELETE SET NULL;
 ALTER TABLE `modules`
 ADD FOREIGN KEY(`id_course`) REFERENCES `courses`(`id_course`)
-ON UPDATE CASCADE ON DELETE CASCADE;
+ON UPDATE CASCADE ON DELETE NO ACTION;
 ALTER TABLE `grades`
 ADD FOREIGN KEY(`id_coder`) REFERENCES `coders`(`id_coder`)
 ON UPDATE CASCADE ON DELETE CASCADE;
@@ -147,7 +147,7 @@ ALTER TABLE `tasks`
 ADD FOREIGN KEY(`id_module`) REFERENCES `modules`(`id_module`)
 ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `courses`
-ADD FOREIGN KEY(`id_course_category`) REFERENCES `courses_categories`(`id_couse_category`)
+ADD FOREIGN KEY(`id_course_category`) REFERENCES `courses_categories`(`id_course_category`)
 ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `progress`
 ADD FOREIGN KEY(`id_coder`) REFERENCES `coders`(`id_coder`)
@@ -157,4 +157,4 @@ ADD FOREIGN KEY(`id_couse`) REFERENCES `courses`(`id_course`)
 ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE `coders`
 ADD FOREIGN KEY(`id_roles`) REFERENCES `roles`(`id_roles`)
-ON UPDATE CASCADE ON DELETE CASCADE;
+ON UPDATE CASCADE ON DELETE SET NULL;
