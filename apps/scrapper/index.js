@@ -12,7 +12,7 @@ const PORT = process.env.SCRAPPER_PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use("/downloads", express.static(path.join(__dirname, "downloads")));
+app.use("../normalizer/documents", express.static(path.join(__dirname, "../normalizer/documents")));
 
 class BackendDynamicScraper {
   constructor() {
@@ -455,8 +455,8 @@ class BackendDynamicScraper {
       const avg =
         moduleGrades.length > 0
           ? (
-              moduleGrades.reduce((a, b) => a + b, 0) / moduleGrades.length
-            ).toFixed(2)
+            moduleGrades.reduce((a, b) => a + b, 0) / moduleGrades.length
+          ).toFixed(2)
           : "-";
       newRow.push(avg);
 
@@ -656,15 +656,13 @@ class BackendDynamicScraper {
 
       grades[studentId] = studentGrades;
       console.log(
-        `Estudiante procesado: ID=${studentId}, Nombre="${studentName}", Actividades=${
-          Object.keys(studentGrades.grades).length
+        `Estudiante procesado: ID=${studentId}, Nombre="${studentName}", Actividades=${Object.keys(studentGrades.grades).length
         }`
       );
     });
 
     console.log(
-      `Calificaciones extraídas para ${
-        Object.keys(grades).length
+      `Calificaciones extraídas para ${Object.keys(grades).length
       } estudiantes del curso ${courseId}`
     );
 
@@ -801,7 +799,7 @@ class BackendDynamicScraper {
 
     // Guardar el HTML descargado para referencia (opcional)
     const htmlFileName = `raw_table_${reportId}_${Date.now()}.html`;
-    const htmlFilePath = path.join(__dirname, "downloads", htmlFileName);
+    const htmlFilePath = path.join(__dirname, "../normalizer/downloads", htmlFileName);
 
     if (!fs.existsSync(path.dirname(htmlFilePath))) {
       fs.mkdirSync(path.dirname(htmlFilePath), { recursive: true });
@@ -834,7 +832,7 @@ class BackendDynamicScraper {
 
   async saveToCSV(data, filename) {
     // Crear directorio downloads si no existe
-    const downloadsDir = path.join(__dirname, "downloads");
+    const downloadsDir = path.join(__dirname, "../normalizer/downloads");
     if (!fs.existsSync(downloadsDir)) {
       fs.mkdirSync(downloadsDir, { recursive: true });
     }
@@ -954,8 +952,8 @@ app.post("/api/scrape/report", async (req, res) => {
       res.json({
         success: true,
         data,
-        downloadUrl: `/downloads/${filename}`,
-        rawHtmlUrl: `/downloads/${data.rawHtmlFile}`,
+        downloadUrl: `../normalizer/downloads/${filename}`,
+        rawHtmlUrl: `../normalizer/downloads/${data.rawHtmlFile}`,
         filePath,
         timestamp: new Date().toISOString(),
       });
@@ -963,7 +961,7 @@ app.post("/api/scrape/report", async (req, res) => {
       res.json({
         success: true,
         data,
-        rawHtmlUrl: `/downloads/${data.rawHtmlFile}`,
+        rawHtmlUrl: `../normalizer/downloads/${data.rawHtmlFile}`,
         timestamp: new Date().toISOString(),
       });
     }
@@ -1005,7 +1003,7 @@ app.post("/api/scrape", async (req, res) => {
         success: true,
         data,
         downloadUrl: `/downloads/${filename}`,
-        rawHtmlUrl: data.rawHtmlFile ? `/downloads/${data.rawHtmlFile}` : null,
+        rawHtmlUrl: data.rawHtmlFile ? `../normalizer/downloads/${data.rawHtmlFile}` : null,
         filePath,
         timestamp: new Date().toISOString(),
       });
@@ -1013,7 +1011,7 @@ app.post("/api/scrape", async (req, res) => {
       res.json({
         success: true,
         data,
-        rawHtmlUrl: data.rawHtmlFile ? `/downloads/${data.rawHtmlFile}` : null,
+        rawHtmlUrl: data.rawHtmlFile ? `../normalizer/downloads/${data.rawHtmlFile}` : null,
         timestamp: new Date().toISOString(),
       });
     }
@@ -1049,8 +1047,8 @@ app.get("/api/scrape/courses", async (req, res) => {
     res.json({
       success: true,
       data,
-      downloadUrl: `/downloads/${filename}`,
-      rawHtmlUrl: `/downloads/${data.rawHtmlFile}`,
+      downloadUrl: `../normalizer/downloads/${filename}`,
+      rawHtmlUrl: `../normalizer/downloads/${data.rawHtmlFile}`,
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
@@ -1066,7 +1064,7 @@ app.get("/api/scrape/courses", async (req, res) => {
 // Obtener lista de archivos descargados
 app.get("/api/downloads", (req, res) => {
   try {
-    const downloadsDir = path.join(__dirname, "downloads");
+    const downloadsDir = path.join(__dirname, "../normalizer/downloads");
 
     if (!fs.existsSync(downloadsDir)) {
       return res.json({ files: [] });
@@ -1080,7 +1078,7 @@ app.get("/api/downloads", (req, res) => {
         filename,
         size: stats.size,
         created: stats.birthtime,
-        downloadUrl: `/downloads/${filename}`,
+        downloadUrl: `../normalizer/downloads/${filename}`,
         type: path.extname(filename).toLowerCase(),
       };
     });
