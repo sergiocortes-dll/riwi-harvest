@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "@harvest/web",
   "version": "1.0.0",
   "description": "Una aplicación de ejemplo que usa react-core y react-router",
   "main": "src/index.js",
