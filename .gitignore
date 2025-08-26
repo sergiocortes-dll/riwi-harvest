@@ -1,3 +1,7 @@
 node_modules
 */node_modules
 */dist
+apps/scrapper/downloads/*
+!apps/scrapper/downloads/.gitkeep
+pnpm-lock.yaml
+.env
