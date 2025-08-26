@@ -15,7 +15,8 @@
     "@harvest/core": "workspace:^",
     "@harvest/router": "workspace:^",
     "concurrently": "^9.2.0",
-    "dotenv": "^17.2.1"
+    "dotenv": "^17.2.1",
+    "dotenv-mono": "^1.5.0"
   },
   "packageManager": "pnpm@10.14.0"
 }
